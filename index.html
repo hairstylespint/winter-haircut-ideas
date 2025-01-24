@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Hairstyle Innovations</title>
+    <meta name="description" content="Discover fresh hairstyle trends for 2025, featuring unique designs, daring cuts, and creative color techniques.">
+    <meta name="keywords" content="2025 Hairstyles, Unique Haircuts, Hair Trends, Bold Hair Colors, Styling Ideas">
+    <meta name="author" content="Top Hairstyle">  	
+    <style>
+        body {
+            background: url('Background.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            margin: 0;
+        }
+        #wrapper {
+            background-color: #000;
+            width: 380px;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+        .content-block {
+            background-color: #000;
+            padding: 3px;
+            border-radius: 1px;
+            margin: 10px 0;
+            text-align: left;
+        }
+        #images {
+            text-align: center;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 5px 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 320px) {
+            #wrapper {
+                width: 95%;
+                padding: 5px;
+            }
+            .content-block {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+<body>    
+    <div id="wrapper">	
+	<center><img src="logo.png" alt="Logo" /></center>
+    <div id="images1"></div>
+    <script async="async" data-cfasync="false" src="//roastwearwritten.com/c411ff9785c664bd135e43098b61bfab/invoke.js"></script>
+	<div id="container-c411ff9785c664bd135e43098b61bfab"></div>	
+    <div class="content-block" id="content1"></div>
+    <div id="images2"></div>       
+	<center><script async="async" data-cfasync="false" src="//roastwearwritten.com/ad9de90c489491650824977b53f25eae/invoke.js"></script>
+	<div id="container-ad9de90c489491650824977b53f25eae"></div>
+    <script async="async" data-cfasync="false" src="//roastwearwritten.com/6683f4839a05cff47fc63acd1bd5b87e/invoke.js"></script>
+    <div id="container-6683f4839a05cff47fc63acd1bd5b87e"></div></center>
+    </div>
+    <script>
+        const textFiles = ['Artikel-1.txt', 'Artikel-2.txt', 'Artikel-3.txt'];
+        const imageFiles = ['Gambar-1.png', 'Gambar-2.png', 'Gambar-3.png', 'Gambar-4.png', 'Gambar-5.png'];
+
+        function getRandomFiles(files, count) {
+            let shuffled = files.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count);
+        }
+
+        const randomTextFiles = getRandomFiles(textFiles, 1);
+        randomTextFiles.forEach((file, index) => {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById(`content${index + 1}`).innerHTML = `<p>${data}</p>`;
+                })
+                .catch(error => {
+                    console.error('Error fetching text file:', error);
+                    document.getElementById(`content${index + 1}`).innerHTML = '<p>Artikel tidak ditemukan</p>';
+                });
+        });
+
+        const randomImages1 = getRandomFiles(imageFiles, 1);
+        randomImages1.forEach(img => {
+            let imageElement = document.createElement('img');
+            imageElement.src = img;
+            imageElement.alt = 'Gambar Acak';
+            document.getElementById('images1').appendChild(imageElement);
+        });
+
+        const randomImages2 = getRandomFiles(imageFiles.filter(img => !randomImages1.includes(img)), 4);
+        randomImages2.forEach(img => {
+            let imageElement = document.createElement('img');
+            imageElement.src = img;
+            imageElement.alt = 'Gambar Acak';
+            document.getElementById('images2').appendChild(imageElement);
+        });
+    </script>
+</body> 
+</html>
